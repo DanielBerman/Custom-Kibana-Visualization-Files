@@ -1,33 +1,38 @@
-Install Elasticsearch, Logstash & Kibana
+### Install Elasticsearch, Logstash & Kibana ###
 
-Check Java version
+### Check Java version ###
 
-Elasticsearch and Logstash require Java 8 or later. Install or update as needed - use the official Oracle distribution or an open-source distribution such as OpenJDK. To check your Java version, run the following command: java -version.
+Elasticsearch and Logstash require Java 8 or later. Install or update as needed - use the [official Oracle distribution](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or an open-source distribution such as [OpenJDK](http://openjdk.java.net/). To check your Java version, run the following command: `java -version`.
 
-Install Elasticsearch
+### Install Elasticsearch ###
+*	Download the [Elasticsearch binary package](https://www.elastic.co/downloads/elasticsearch) for your platform.
+*	Extract the `.zip` or `tar.gz` archive file
 
-Download the Elasticsearch binary package for your platform.
-Extract the .zip or tar.gz archive file
+(see (https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) for more help)
 
-Install Logstash
+### Install Logstash ###
+* Download the [Logstash binary package](https://www.elastic.co/downloads/logstash) for your platform.
+* Extract the `.zip` or `tar.gz` archive file 
 
-Download the Logstash binary package for your platform.
-Extract the .zip or tar.gz archive file
+(see (https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html) for more help)
 
-Install Kibana
+### Install Kibana ###
+-	Download the [Kibana 5 binary package](https://www.elastic.co/downloads/kibana) for your platform.
+-	Extract the `.zip` or `tar.gz` archive file.
 
-Download the Kibana 5 binary package for your platform.
-Extract the .zip or tar.gz archive file.
+(see (https://www.elastic.co/guide/en/kibana/current/setup.html) for more help)
 
-Test Installation
+### Test Installation ###
 
-Elasticsearch
+### Elasticsearch ###
 
-Open a new shell window and run Elasticsearch.
+Open a new shell window and run Elasticsearch. 
 
 <path_to_elasticsearch_root_dir>/bin/elasticsearch 
-Elasticsearch should now be running on port 9200. To test, point your browser at port 9200 (http://localhost:9200). You should see output similar to the following with status code of 200.
 
+Elasticsearch should now be running on port 9200. To test, point your browser at port 9200 (`http://localhost:9200`). You should see output similar to the following with status code of 200. 
+
+```
 {
   "name" : "TS9xPKz",
   "cluster_name" : "elasticsearch",
@@ -45,21 +50,32 @@ Elasticsearch should now be running on port 9200. To test, point your browser at
   },
   "tagline" : "You Know, for Search"
 }
+```
 
-Logstash
+### Logstash ###
 
 To test your Logstash installation, run the following command in a new shell:
 
 <path_to_logstash_root_dir>/bin/logstash -e 'input { stdin { } } output { stdout {} }'
-Type checking logstash! at the command prompt. If Logstash is correctly installed, you should see:
 
+
+Type `checking logstash!` at the command prompt. If Logstash is correctly installed, you should see:
+
+```shell
 checking logstash!
 2019-03-28T01:22:14.405+0000 0.0.0.0 checking logstash!
-Exit Logstash using CTRL-D command.
+```
+Exit Logstash using `CTRL-D` command.
 
-Kibana
+### Kibana ###
 
-Open a new shell window and run Kibana.
+Open a new shell window and run Kibana. 
 
 <path_to_kibana_root_dir>/bin/kibana 
-Kibana should now be running on port 5601. To test, point your web browser at port 5601 (http://localhost:5601). You should see the Kibana UI.
+
+Kibana should now be running on port 5601. To test, point your web browser at port 5601 (`http://localhost:5601`). You should see the Kibana UI.
+
+
+
+
+
