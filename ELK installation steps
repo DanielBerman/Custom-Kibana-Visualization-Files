@@ -61,10 +61,9 @@ To test your Logstash installation, run the following command in a new shell:
 
 Type `checking logstash!` at the command prompt. If Logstash is correctly installed, you should see:
 
-```shell
 checking logstash!
 2019-03-28T01:22:14.405+0000 0.0.0.0 checking logstash!
-```
+
 Exit Logstash using `CTRL-D` command.
 
 ### Kibana ###
