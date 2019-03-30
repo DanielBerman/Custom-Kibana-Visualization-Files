@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "title": "Apache All Logs Traces ",
+  "data": {
+    "url": {
+      "%context%": true,
+      "%timefield%": "@timestamp",
+      "index": "filebeat-*",
+      "body": {
+        "aggs": {
+          "time_buckets": {
+            "date_histogram": {
+              "field": "@timestamp",
+              "interval": {
+                "%autointerval%": true
+              },
+              "extended_bounds": {
+                "min": {
+                  "%timefilter%": "min"
+                },
+                "max": {
+                  "%timefilter%": "max"
+                }
+              },
+              "min_doc_count": 0
+            }
+          }
+        },
+        "size": 0
+      }
+    },
+    "format": {
+      "property": "aggregations.time_buckets.buckets"
+    }
+  },
+  "mark": "rule",
+  "encoding": {
+    "x": {
+      "field": "key",
+      "type": "temporal",
+      "axis": {"title": "Day-wise Apache Logs"}
+    },
+    "y": {
+      "field": "doc_count",
+      "type": "quantitative",
+      "axis": {"title": "Number of Hits"}
+    }
+  }
+}
